@@ -37,7 +37,7 @@ Wok Dragon/
 | 層級 | 平台 | 位置 | 讀取時機 |
 |------|------|------|---------|
 | L1 | 本地（GDrive） | `AGENTS.md`＋`handoff.md` | 每個 session |
-| L2 | GitHub | `tp1c/wok-dragon` | 指定時 |
+| L2 | GitHub | `tp1c/wok-dragon`（Pages: `https://tp1c.github.io/wok-dragon/`） | 指定時 |
 | L3 | Obsidian | `Wok Dragon/專案工作流程.md` | 有需要時 |
 
 ## 工作約定
