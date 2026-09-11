@@ -7,6 +7,7 @@
    - 原 `js/main.js` 中的 `initMenuFilter()` 僅使用嚴格字串相等比對（`cardCategory === filterValue`）。
    - 主廚特選等菜品因包含多標籤（如 `specials chicken`、`specials sides`），字串比對失敗而無法顯示。
    - 改進為多標籤分割包含比對（`categories.includes(filterValue)`），讓「Chef's Specials」（顯示 Mango Chicken、Bourbon Chicken、Dragon Fries）、「Chicken Meals」與「Sides & Appetizers」皆能精準篩選多標籤料理。
+   - 在 `index.html` 的 CSS 與 JS 引入路徑加上版本雜湊參數（`?v=1.0.2`），強制使用者瀏覽器立即載入最新程式碼、跳過舊快取。
 2. 頂部 Header 品牌 Logo（WOK DRAGON）與導覽選單第一項「Home」重疊擠壓排版已完成修復並完成跨裝置 RWD 斷點設定。
 
 ## 🚦 目前狀態
@@ -22,6 +23,6 @@
 - 本專案未變更或覆蓋既有線上營運中的 wokdragon.com 正式網站。
 
 ## 🕐 最後更新
-- 時間：2026-09-11 15:23
+- 時間：2026-09-11 15:25
 - 更新者：Antigravity @ DESKTOP-V8U57EU
 - Git push：✅ 已推
