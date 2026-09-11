@@ -3,18 +3,15 @@
 > 任何 Agent、任何電腦接手前**必讀**；收工時**必更新**。本檔只放交接必需的精簡資訊，詳細脈絡放 Obsidian（若有 L3）。
 
 ## ⏯️ 目前做到哪
-1. 修正「Explore our menu」中點擊「Chef's Specials」無料理顯示之分類篩選問題：
-   - 原 `js/main.js` 中的 `initMenuFilter()` 僅使用嚴格字串相等比對（`cardCategory === filterValue`）。
-   - 主廚特選等菜品因包含多標籤（如 `specials chicken`、`specials sides`），字串比對失敗而無法顯示。
-   - 改進為多標籤分割包含比對（`categories.includes(filterValue)`），讓「Chef's Specials」（顯示 Mango Chicken、Bourbon Chicken、Dragon Fries）、「Chicken Meals」與「Sides & Appetizers」皆能精準篩選多標籤料理。
-   - 在 `index.html` 的 CSS 與 JS 引入路徑加上版本雜湊參數（`?v=1.0.2`），強制使用者瀏覽器立即載入最新程式碼、跳過舊快取。
-2. 頂部 Header 品牌 Logo（WOK DRAGON）與導覽選單第一項「Home」重疊擠壓排版已完成修復並完成跨裝置 RWD 斷點設定。
+1. 依使用者決策採用方案 C，將首屏第三個指標由 `4.8★` 調整為 ` #1 ` • ` Mango Chicken Favorite `，集中凸顯全喬治亞州最受歡迎的招牌明星菜品，避開主觀評分限制。
+2. 修正「Explore our menu」中點擊「Chef's Specials」之多標籤分類篩選比對問題，並在 `index.html` 引入路徑加入防快取版本戳記（`?v=1.0.3`）。
+3. 頂部 Header 品牌 Logo（WOK DRAGON）與導覽選單第一項「Home」重疊擠壓排版已完成修復並完成跨裝置 RWD 斷點設定。
 
 ## 🚦 目前狀態
-已修復完成並推送到 GitHub，GitHub Pages 自動部署更新中（https://tp1c.github.io/wok-dragon/）。菜單分類（All Specialties、Chef's Specials、Chicken Meals、Sides & Appetizers、Rice & Noodles、Bubble Tea & Drinks）皆具備滑順的淡入縮放過渡動畫且 100% 正常篩選。
+已更新完成並推送到 GitHub，GitHub Pages 自動部署中（https://tp1c.github.io/wok-dragon/）。首頁指標清晰呼應三大優勢：`20+` 年老字號、`2` 間亞特蘭大分店、`#1` 招牌芒果雞人氣爆款。
 
 ## ➡️ 下一步
-1. 請使用者在線上預覽網址（https://tp1c.github.io/wok-dragon/）重新整理，測試菜單各分類按鈕切換效果。
+1. 請使用者在線上預覽網址（https://tp1c.github.io/wok-dragon/）確認首屏「#1 Mango Chicken Favorite」的視覺呈現。
 2. 規劃菜單價格標示或線上點餐/外帶預約方案。
 3. 補充更多品牌故事細節或特色餐點。
 
@@ -23,6 +20,6 @@
 - 本專案未變更或覆蓋既有線上營運中的 wokdragon.com 正式網站。
 
 ## 🕐 最後更新
-- 時間：2026-09-11 15:25
+- 時間：2026-09-11 16:18
 - 更新者：Antigravity @ DESKTOP-V8U57EU
 - Git push：✅ 已推
