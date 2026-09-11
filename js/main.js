@@ -71,8 +71,9 @@ function initMenuFilter() {
       const filterValue = btn.getAttribute('data-filter');
 
       dishCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (filterValue === 'all' || cardCategory === filterValue) {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const categories = cardCategory.trim().split(/\s+/);
+        if (filterValue === 'all' || categories.includes(filterValue)) {
           card.style.display = 'flex';
           card.style.opacity = '0';
           card.style.transform = 'scale(0.96)';
