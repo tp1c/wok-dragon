@@ -964,6 +964,10 @@ button {
   transform: scale(1.08);
 }
 
+.img-mango-chicken {
+  object-position: center 20%;
+}
+
 .dish-floating-badge {
   position: absolute;
   top: 1rem;
