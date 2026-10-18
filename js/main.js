@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenuFilter();
   initLocationSwitcher();
   initLiveHours();
-  initHiringModal();
+  initContactForm();
   initScrollEffects();
 });
 
@@ -206,52 +206,29 @@ function initLiveHours() {
 }
 
 /* ==========================================================================
-   Hiring / Application Modal
+   Contact Us Form
    ========================================================================== */
-function initHiringModal() {
-  const modal = document.getElementById('hiring-modal');
-  const openBtns = document.querySelectorAll('.open-hiring-btn');
-  const closeBtn = document.querySelector('.modal-close-btn');
-  const form = document.getElementById('hiring-form');
-  const successNotice = document.getElementById('hiring-success');
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const successNotice = document.getElementById('contact-success');
+  if (!form) return;
 
-  function openModal() {
-    if (modal) {
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeModal() {
-    if (modal) {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-      if (form) form.reset();
-      if (successNotice) successNotice.style.display = 'none';
-      if (form) form.style.display = 'block';
-    }
-  }
-
-  openBtns.forEach(btn => btn.addEventListener('click', openModal));
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-  }
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', (e) => {
+    const action = form.getAttribute('action');
+    // Until a real email endpoint is configured (action="#"), show the success state locally.
+    if (!action || action === '#') {
       e.preventDefault();
       form.style.display = 'none';
-      if (successNotice) {
-        successNotice.style.display = 'block';
-      }
-      setTimeout(closeModal, 3000);
-    });
-  }
+      if (successNotice) successNotice.style.display = 'block';
+      setTimeout(() => {
+        form.reset();
+        form.style.display = 'block';
+        if (successNotice) successNotice.style.display = 'none';
+      }, 5000);
+    }
+  });
 }
+
 
 /* ==========================================================================
    Scroll Effects & Active Link Highlighter
