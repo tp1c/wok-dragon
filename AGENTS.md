@@ -40,7 +40,7 @@ Wok Dragon/
 ├── assets/
 │   └── dishes/      # 官方料理與節慶活動相片牆本地圖資
 ├── css/
-│   └── style.css    # 現代東方黑金設計系統、微動畫與跨裝置 RWD 樣式
+│   └── style.css    # 現代白綠 Sweetgreen 設計系統、微動畫與跨裝置 RWD 樣式
 ├── js/
 │   └── main.js      # 抽屜導覽、菜單多標籤即時分類、即時美東營業時間、雙分店切換
 └── pics/            # 使用者上傳備用高解析圖資 (如 Bourbon Chicken 實拍照)
