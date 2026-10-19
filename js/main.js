@@ -130,7 +130,7 @@ const locationData = {
     platforms: [
       {
         name: 'DoorDash',
-        url: 'https://www.doordash.com/search/store/Wokdragon%20Chamblee/',
+        url: 'https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJXb2tkcmFnb24gQ2hhbWJsZWUiLCJpdGVtX2lkcyI6W10sInNlYXJjaF90ZXJtIjoibW9sZGVncmFnb24gYnViYmxlIiwidmVydGljYWxfaWQiOi05OTksInZlcnRpY2FsX25hbWUiOiJhbGwiLCJxdWVyeV9pbnRlbnQiOiJTVE9SRV9SWCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEwMDMyMiwxMDAzMzIsMTEwMDQ3XX0=&pickup=false',
         btnClass: 'btn-doordash',
         icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>'
       },
