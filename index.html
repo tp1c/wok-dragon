@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wokdragon | Contemporary Chinese Flavors in Atlanta, GA</title>
-  <meta name="description" content="Wokdragon has been serving freshly made, flavorful Chinese dishes for over 20 years in Atlanta. Visit us at Lenox Square and Chamblee or order on DoorDash!">
-  <meta name="keywords" content="Wokdragon, Atlanta Chinese Food, Lenox Square Food Court, Chamblee Chinese Restaurant, Mango Chicken, Bourbon Chicken, Crab Rangoons, Bubble Tea Atlanta">
+  <meta name="description" content="Wokdragon has been serving freshly made, flavorful Chinese dishes for over 20 years in Atlanta. Visit us at Lenox Square and Chamblee or order online on DoorDash, Uber Eats &amp; Grubhub!">
+  <meta name="keywords" content="Wokdragon, Atlanta Chinese Food, Lenox Square Food Court, Chamblee Chinese Restaurant, Mango Chicken, Bourbon Chicken, Uber Eats Atlanta, DoorDash, Grubhub Chamblee, Bubble Tea Atlanta">
   
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
   <!-- Top Announcement Bar -->
   <aside class="announcement-bar">
     <span>🔥 Official Participant: <strong>Taste of Atlanta 2025</strong>! Craving wok favorites?</span>
-    <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer">Order on DoorDash &rarr;</a>
+    <a href="#order" class="trigger-order-modal">Order Delivery &rarr;</a>
   </aside>
 
   <!-- Main Navigation Header -->
@@ -49,12 +49,12 @@
         </ul>
       </nav>
 
-      <!-- Header Action CTAs -->
       <div class="header-actions">
-        <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>
-          <span>Order Now</span>
-        </a>
+        <button type="button" class="btn btn-primary btn-sm btn-order-online trigger-order-modal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span>Order Online</span>
+        </button>
+      </div>
         <button class="mobile-toggle" aria-label="Toggle navigation drawer">
           <span></span>
           <span></span>
@@ -81,9 +81,9 @@
       </ul>
     </div>
     <div class="mobile-drawer-footer">
-      <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash" style="width: 100%;">
-        Order on DoorDash
-      </a>
+      <button type="button" class="btn btn-primary trigger-order-modal" style="width: 100%;">
+        Order Online
+      </button>
     </div>
   </aside>
 
@@ -114,11 +114,11 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>
-              <span>Order on DoorDash</span>
-            </a>
-            <a href="#menu" class="btn btn-primary">
+            <button type="button" class="btn btn-primary trigger-order-modal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Order Online</span>
+            </button>
+            <a href="#menu" class="btn btn-secondary">
               <span>Explore Our Menu</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -148,14 +148,14 @@
           <div class="hero-card-wrapper">
             <div class="hero-dish-img-wrap">
               <span class="badge-tag popular hero-card-tag">Chef's Signature</span>
-              <img src="assets/dishes/mango_chicken.jpg?v=1.2.0" alt="Signature Mango Chicken Meal" class="img-mango-chicken">
+              <img src="assets/dishes/mango_chicken.png?v=1.3.0" alt="Signature Mango Chicken Meal" class="img-mango-chicken">
             </div>
             <div class="hero-card-info">
               <div>
                 <h3 class="hero-card-name">Famous Mango Chicken</h3>
                 <p class="hero-card-sub">Tender wok-crisped chicken with sweet mango glaze</p>
               </div>
-              <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order</a>
+              <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order</button>
             </div>
 
             <!-- Taste of Atlanta Badge Overlay -->
@@ -199,14 +199,14 @@
           <span class="section-eyebrow">Our Legacy</span>
           <h2 class="section-title">20 Years of Fire, Flavor &amp; Heart</h2>
           <p class="section-desc">
-            For more than two decades, Wokdragon has been a cherished neighborhood landmark in the heart of Atlanta, delivering comforting warmth, authentic wok hei, and contemporary Chinese craftsmanship.
+            For more than two decades, Wokdragon has been a cherished neighborhood landmark in the heart of Atlanta, delivering comforting warmth, authentic wok-tossed dishes, and contemporary Chinese craftsmanship.
           </p>
         </div>
 
         <div class="features-grid">
           <article class="feature-card">
             <div class="feature-icon-box">🔥</div>
-            <h3>The Mastery of Wok Hei</h3>
+            <h3>The Art of Wok-Fired Cooking</h3>
             <p>Every stir-fry is tossed at intense temperatures over roaring flames, locking in crisp vegetable textures, seared meats, and our signature smoky wok aroma.</p>
           </article>
 
@@ -253,7 +253,7 @@
           <article class="dish-card" data-category="specials chicken">
             <div class="dish-media">
               <span class="badge-tag popular dish-floating-badge">Signature #1</span>
-              <img src="assets/dishes/mango_chicken.jpg?v=1.2.0" alt="Mango Chicken Meal" class="img-mango-chicken">
+              <img src="assets/dishes/mango_chicken.png?v=1.3.0" alt="Mango Chicken Meal" class="img-mango-chicken">
             </div>
             <div class="dish-content">
               <div class="dish-header">
@@ -262,7 +262,7 @@
               <p class="dish-desc">Crispy fried chicken breast glazed in a luscious real mango reduction. Atlanta's favorite sweet and savory creation.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Chef's Signature</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -280,7 +280,7 @@
               <p class="dish-desc">Tender bite-sized chicken simmered in our rich, caramelized bourbon glaze with ginger, garlic, and scallions. Deep, smoky and satisfying.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Chicken Meal</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -298,7 +298,7 @@
               <p class="dish-desc">Golden crisp chicken bites tossed in vibrant house-made sweet &amp; tangy sauce with fresh broccoli, carrots, and sweet bell peppers.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Chicken Meal</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -316,7 +316,7 @@
               <p class="dish-desc">Delicately folded wontons stuffed with luscious cream cheese and succulent crab meat, fried until golden and crisp. Served with sweet dipping sauce.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Appetizer</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -334,7 +334,7 @@
               <p class="dish-desc">Crispy golden potatoes tossed with secret Dragon spice blend, aromatic garlic, sweet onions, and herbs. The ultimate addictive side snack.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Appetizer &bull; Spicy</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -352,7 +352,7 @@
               <p class="dish-desc">Crispy pastry wrappers filled with seasoned cabbage, shredded carrots, and savory filling, fried to golden perfection with sweet chili dip.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Appetizer</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -370,7 +370,7 @@
               <p class="dish-desc">Egg noodles stir-fried in a searing wok with dark soy, scallions, julienned vegetables, and savory aromatics.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Noodles &amp; Rice</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -388,7 +388,7 @@
               <p class="dish-desc">Jasmine rice flash-tossed with farm-fresh eggs, sweet peas, crisp carrots, and our savory seasoning blend in a searing hot wok.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Noodles &amp; Rice</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -406,7 +406,7 @@
               <p class="dish-desc">Tender-crisp garden string beans dry-fried in the wok with minced garlic, cracked black pepper, and light soy.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Vegetarian Side</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -424,7 +424,7 @@
               <p class="dish-desc">A colorful blend of fresh broccoli, crisp carrots, sweet cabbage, and mushrooms cooked in delicate ginger sauce.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Vegetarian Side</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -442,7 +442,7 @@
               <p class="dish-desc">Refreshing fruit and milk teas brewed fresh, served chilled over chewy brown sugar tapioca pearls with colorful wide straws.</p>
               <div class="dish-footer">
                 <span class="dish-category-label">Beverage</span>
-                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Order on DoorDash</a>
+                <button type="button" class="btn btn-primary btn-sm trigger-order-modal">Order Delivery</button>
               </div>
             </div>
           </article>
@@ -517,13 +517,25 @@
             </div>
 
             <div class="loc-actions">
-              <a id="loc-directions" href="https://www.google.com/maps/dir//3393+Peachtree+Rd+NE,+Atlanta,+GA+30326,+United+States/@33.8466952,-84.4461499,12z/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <a id="loc-directions" href="https://www.google.com/maps/dir//3393+Peachtree+Rd+NE,+Atlanta,+GA+30326,+United+States/@33.8466952,-84.4461499,12z/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 <span>Get Directions (Google Maps)</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
               </a>
-              <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash">
-                <span>Order on DoorDash</span>
-              </a>
+            </div>
+
+            <!-- Location Delivery Platforms -->
+            <div class="loc-delivery-section">
+              <span class="loc-delivery-label">Order Online Delivery:</span>
+              <div id="loc-delivery-buttons" class="loc-delivery-buttons">
+                <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>
+                  <span>DoorDash</span>
+                </a>
+                <a href="https://www.ubereats.com/store/wokdragon-lenox/JG9YA1eBW3e7_UIakWSRRg" target="_blank" rel="noopener noreferrer" class="btn btn-ubereats btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                  <span>Uber Eats</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -661,9 +673,9 @@
       <a href="#locations" class="btn btn-secondary btn-sm" style="font-size: 0.85rem;">
         📍 Find Us
       </a>
-      <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash btn-sm" style="font-size: 0.85rem;">
-        🛵 Order DoorDash
-      </a>
+      <button type="button" class="btn btn-primary btn-sm trigger-order-modal" style="font-size: 0.85rem;">
+        🛵 Order Online
+      </button>
     </div>
   </aside>
 
@@ -717,9 +729,9 @@
         <div class="footer-col">
           <h5>Order &amp; Delivery</h5>
           <p style="margin-bottom: 1rem; color: var(--text-secondary);">Craving fresh Chinese cuisine delivered right to your home or office?</p>
-          <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash btn-sm" style="width: 100%;">
-            Order on DoorDash
-          </a>
+          <button type="button" class="btn btn-primary btn-sm trigger-order-modal" style="width: 100%;">
+            Order Online
+          </button>
         </div>
       </div>
 
@@ -729,6 +741,74 @@
       </div>
     </div>
   </footer>
+
+  <!-- Location & Delivery Selection Modal -->
+  <div id="order-modal" class="order-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="order-modal-title">
+    <div class="order-modal-card">
+      <div class="order-modal-header">
+        <div>
+          <span class="order-modal-eyebrow">Online Delivery</span>
+          <h3 id="order-modal-title">Choose Your Location</h3>
+        </div>
+        <button type="button" class="order-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <p class="order-modal-sub">Select your nearest Wokdragon to view available delivery platforms:</p>
+      
+      <div class="order-store-cards">
+        <!-- Store 1: Lenox Square -->
+        <div class="order-store-card" data-store="lenox">
+          <div class="order-store-header">
+            <div class="order-store-info">
+              <span class="order-store-tag">Buckhead &bull; Food Court</span>
+              <h4>Lenox Square Mall</h4>
+              <p class="order-store-addr">3393 Peachtree Rd, Atlanta, GA 30326</p>
+            </div>
+            <span class="store-platform-badge">2 Platforms</span>
+          </div>
+          <div class="order-platform-buttons">
+            <a href="https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0" target="_blank" rel="noopener noreferrer" class="btn btn-doordash">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>
+              <span>DoorDash</span>
+            </a>
+            <a href="https://www.ubereats.com/store/wokdragon-lenox/JG9YA1eBW3e7_UIakWSRRg" target="_blank" rel="noopener noreferrer" class="btn btn-ubereats">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+              <span>Uber Eats</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 2: Chamblee -->
+        <div class="order-store-card" data-store="chamblee">
+          <div class="order-store-header">
+            <div class="order-store-info">
+              <span class="order-store-tag">Walmart Shopping Center</span>
+              <h4>Chamblee Location</h4>
+              <p class="order-store-addr">1891 Chamblee Tucker Rd Ste 4-2, Chamblee, GA 30341</p>
+            </div>
+            <span class="store-platform-badge">3 Platforms</span>
+          </div>
+          <div class="order-platform-buttons">
+            <a href="https://www.doordash.com/search/store/Wokdragon%20Chamblee/" target="_blank" rel="noopener noreferrer" class="btn btn-doordash">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>
+              <span>DoorDash</span>
+            </a>
+            <a href="https://www.ubereats.com/store/wok-dragon-chamblee-1891-chamblee-tucker-road/efYsOINGVsCq7TD7JLxNog" target="_blank" rel="noopener noreferrer" class="btn btn-ubereats">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+              <span>Uber Eats</span>
+            </a>
+            <a href="https://www.grubhub.com/restaurant/wokdragon-1891-chamblee-tucker-rd-ste-4-2-chamblee/12688616" target="_blank" rel="noopener noreferrer" class="btn btn-grubhub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/></svg>
+              <span>Grubhub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-modal-footer">
+        <small>Delivery menu pricing, service fees, and promotions may vary slightly by platform.</small>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/main.js?v=2.0.0"></script>

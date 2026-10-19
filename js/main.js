@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveHours();
   initContactForm();
   initScrollEffects();
+  initOrderModal();
 });
 
 /* ==========================================================================
@@ -98,21 +99,53 @@ const locationData = {
     name: 'Lenox Square Mall (Food Court)',
     address: '3393 Peachtree Rd, Atlanta, GA 30326, USA',
     directionsUrl: 'https://www.google.com/maps/dir//3393+Peachtree+Rd+NE,+Atlanta,+GA+30326,+United+States/@33.8466952,-84.4461499,12z/',
-    phone: '404-239-0088',
     hoursMonSat: '10:00 am - 08:00 pm',
     hoursSun: '12:00 pm - 07:00 pm',
     features: ['Food Court Seating', 'Lenox MARTA Station Adjacent', 'Fast Pickup Available'],
-    mapEmbed: 'https://maps.google.com/maps?q=3393%20Peachtree%20Rd%20NE,%20Atlanta,%20GA%2030326&t=&z=15&ie=UTF8&iwloc=&output=embed'
+    mapEmbed: 'https://maps.google.com/maps?q=3393%20Peachtree%20Rd%20NE,%20Atlanta,%20GA%2030326&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    platforms: [
+      {
+        name: 'DoorDash',
+        url: 'https://www.doordash.com/store/wokdragon-atlanta-1108545/1638594/?srsltid=AfmBOorkehzisPOrJtu10zrl5aYhxTYKJkxMZjz05ZZuDPOXT1faexH0',
+        btnClass: 'btn-doordash',
+        icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>'
+      },
+      {
+        name: 'Uber Eats',
+        url: 'https://www.ubereats.com/store/wokdragon-lenox/JG9YA1eBW3e7_UIakWSRRg',
+        btnClass: 'btn-ubereats',
+        icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>'
+      }
+    ]
   },
   chamblee: {
     name: 'Chamblee Location (Walmart Shopping Center)',
     address: '1891 Chamblee Tucker Rd Ste 4-2, Chamblee, GA 30341',
     directionsUrl: 'https://www.google.com/maps/place/1891+Chamblee+Tucker+Rd+Ste+4-2,+Chamblee,+GA+30341,+USA/@33.8885917,-84.3123581,17z/',
-    phone: '404-239-0088',
     hoursMonSat: '10:00 am - 08:00 pm',
     hoursSun: '12:00 pm - 07:00 pm',
     features: ['Free Spacious Parking', 'Walmart Shopping Center', 'Convenient Curbside & Pickup'],
-    mapEmbed: 'https://maps.google.com/maps?q=1891%20Chamblee%20Tucker%20Rd%20Ste%204-2,%20Chamblee,%20GA%2030341&t=&z=15&ie=UTF8&iwloc=&output=embed'
+    mapEmbed: 'https://maps.google.com/maps?q=1891%20Chamblee%20Tucker%20Rd%20Ste%204-2,%20Chamblee,%20GA%2030341&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    platforms: [
+      {
+        name: 'DoorDash',
+        url: 'https://www.doordash.com/search/store/Wokdragon%20Chamblee/',
+        btnClass: 'btn-doordash',
+        icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.071 8.41a6.09 6.09 0 0 0-5.397-3.328H1.615A1.614 1.614 0 0 0 .2 7.424a1.614 1.614 0 0 0 1.415 1.728h16.059a2.868 2.868 0 0 1 2.868 2.868 2.868 2.868 0 0 1-2.868 2.868H9.68a1.614 1.614 0 0 0-1.415 1.728 1.614 1.614 0 0 0 1.415 1.728h7.994a6.09 6.09 0 0 0 5.397-3.328 6.09 6.09 0 0 0 0-6.606z"/></svg>'
+      },
+      {
+        name: 'Uber Eats',
+        url: 'https://www.ubereats.com/store/wok-dragon-chamblee-1891-chamblee-tucker-road/efYsOINGVsCq7TD7JLxNog',
+        btnClass: 'btn-ubereats',
+        icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>'
+      },
+      {
+        name: 'Grubhub',
+        url: 'https://www.grubhub.com/restaurant/wokdragon-1891-chamblee-tucker-rd-ste-4-2-chamblee/12688616',
+        btnClass: 'btn-grubhub',
+        icon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/></svg>'
+      }
+    ]
   }
 };
 
@@ -123,6 +156,20 @@ function initLocationSwitcher() {
   const locDirections = document.getElementById('loc-directions');
   const locFeatures = document.getElementById('loc-features');
   const mapFrame = document.getElementById('loc-map-frame');
+  const locDeliveryBtns = document.getElementById('loc-delivery-buttons');
+
+  function renderDeliveryButtons(platforms) {
+    if (!locDeliveryBtns || !platforms) return;
+    locDeliveryBtns.innerHTML = platforms.map(p => `
+      <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn ${p.btnClass} btn-sm">
+        ${p.icon}
+        <span>${p.name}</span>
+      </a>
+    `).join('');
+  }
+
+  // Initial render with default active store (lenox)
+  renderDeliveryButtons(locationData.lenox.platforms);
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -147,6 +194,8 @@ function initLocationSwitcher() {
           </div>
         `).join('');
       }
+
+      renderDeliveryButtons(data.platforms);
     });
   });
 }
@@ -264,5 +313,51 @@ function initScrollEffects() {
         link.classList.add('active');
       }
     });
+  });
+}
+
+/* ==========================================================================
+   Order Online / Location Delivery Modal
+   ========================================================================== */
+function initOrderModal() {
+  const modal = document.getElementById('order-modal');
+  if (!modal) return;
+
+  const closeBtn = modal.querySelector('.order-modal-close');
+  const triggers = document.querySelectorAll('.trigger-order-modal');
+
+  function openModal() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
   });
 }

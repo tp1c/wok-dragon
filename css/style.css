@@ -162,6 +162,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(235, 23, 0, 0.4);
 }
+.btn-ubereats {
+  background: #06c167;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(6, 193, 103, 0.28);
+}
+.btn-ubereats:hover {
+  background: #05a357;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(6, 193, 103, 0.4);
+}
+.btn-grubhub {
+  background: #f63440;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(246, 52, 64, 0.28);
+}
+.btn-grubhub:hover {
+  background: #d62430;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(246, 52, 64, 0.4);
+}
 .btn-secondary {
   background: #ffffff;
   color: var(--brand-green-deep);
@@ -587,7 +609,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .dish-media { position: relative; aspect-ratio: 16/11; overflow: hidden; }
 .dish-media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
 .dish-card:hover .dish-media img { transform: scale(1.07); }
-.img-mango-chicken { object-position: center 20%; }
+.img-mango-chicken { object-position: center 40%; }
 .dish-floating-badge { position: absolute; top: 1rem; left: 1rem; z-index: 2; }
 .dish-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
 .dish-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; }
@@ -830,7 +852,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 768px) {
   body { padding-bottom: 70px; }
   .mobile-sticky-bar { display: block; }
-  .header-actions .btn-doordash { display: none; }
+  .header-actions .btn-doordash, .header-actions .btn-order-online { display: none; }
   .header-inner { height: 74px; }
   .brand-logo-img { height: 56px; }
   .hero { min-height: auto; padding: 3rem 0 4rem; }
@@ -846,4 +868,211 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .section { padding: 4.5rem 0; }
   .hero-card-taste-badge { right: 0; }
+}
+
+/* ==========================================================================
+   Order Online / Location Delivery Modal
+   ========================================================================== */
+.order-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 48, 16, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.order-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.order-modal-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem 2.2rem;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.94) translateY(12px);
+  transition: transform var(--transition-normal);
+}
+
+.order-modal-backdrop.is-open .order-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.order-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.order-modal-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-green-deep);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.4rem;
+}
+
+.order-modal-header h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--brand-green-ink);
+}
+
+.order-modal-close {
+  background: var(--bg-secondary);
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.order-modal-close:hover {
+  background: var(--brand-green);
+  color: var(--brand-green-ink);
+}
+
+.order-modal-sub {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.4rem;
+  line-height: 1.5;
+}
+
+.order-store-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.3rem;
+}
+
+.order-store-card {
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.3rem;
+  background: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.order-store-card:hover {
+  border-color: var(--brand-green-mid);
+  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+}
+
+.order-store-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.85rem;
+}
+
+.order-store-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brand-green-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.order-store-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-green-ink);
+  margin-top: 0.15rem;
+}
+
+.order-store-addr {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+.store-platform-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.order-platform-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.order-platform-buttons .btn {
+  font-size: 0.85rem;
+  padding: 0.55rem 1.05rem;
+}
+
+.order-modal-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.85rem;
+}
+
+/* ==========================================================================
+   Location Card Delivery Section
+   ========================================================================== */
+.loc-delivery-section {
+  margin-top: 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.loc-delivery-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brand-green-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.65rem;
+}
+
+.loc-delivery-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.loc-delivery-buttons .btn {
+  font-size: 0.85rem;
+  padding: 0.55rem 1.1rem;
 }
