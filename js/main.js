@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollEffects();
   initOrderModal();
+  initAnalyticsTracking();
 });
 
 /* ==========================================================================
@@ -196,6 +197,9 @@ function initLocationSwitcher() {
       }
 
       renderDeliveryButtons(data.platforms);
+      trackEvent('location_tab_switch', {
+        store_selected: data.name
+      });
     });
   });
 }
@@ -264,6 +268,7 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     const action = form.getAttribute('action');
+    trackEvent('contact_form_submit', { form_id: 'contact-form' });
     // Until a real email endpoint is configured (action="#"), show the success state locally.
     if (!action || action === '#') {
       e.preventDefault();
@@ -358,6 +363,66 @@ function initOrderModal() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) {
       closeModal();
+    }
+  });
+}
+
+/* ==========================================================================
+   Website Analytics & Custom Event Tracking (Google Analytics 4 / GA4)
+   ========================================================================== */
+function trackEvent(eventName, params = {}) {
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    }
+    // Custom DOM event for optional local debugging
+    window.dispatchEvent(new CustomEvent('wokdragon_analytics', { detail: { event: eventName, params } }));
+    console.debug('[Analytics Event]', eventName, params);
+  } catch (err) {
+    console.warn('Analytics tracking error:', err);
+  }
+}
+
+function initAnalyticsTracking() {
+  document.addEventListener('click', (e) => {
+    // 1. Track Menu Item Clicks (Which dish gets most clicks)
+    const triggerBtn = e.target.closest('.trigger-order-modal');
+    if (triggerBtn) {
+      const dishCard = triggerBtn.closest('.dish-card');
+      const dishName = triggerBtn.getAttribute('data-dish') || (dishCard ? dishCard.querySelector('.dish-title')?.textContent.trim() : null);
+      const dishCategory = triggerBtn.getAttribute('data-category') || (dishCard ? dishCard.getAttribute('data-category') : null);
+
+      if (dishName) {
+        trackEvent('menu_item_click', {
+          dish_name: dishName,
+          category: dishCategory || 'General',
+          click_source: dishCard ? 'menu_grid' : 'hero_card'
+        });
+      }
+    }
+
+    // 2. Track Delivery Platform Outbound Clicks
+    const platformBtn = e.target.closest('.btn-doordash, .btn-ubereats, .btn-grubhub');
+    if (platformBtn) {
+      const storeCard = platformBtn.closest('.order-store-card');
+      const storeName = storeCard ? storeCard.querySelector('h4')?.textContent.trim() : (document.getElementById('loc-title')?.textContent.trim() || 'Active Store');
+      const platformName = platformBtn.classList.contains('btn-doordash') ? 'DoorDash' : (platformBtn.classList.contains('btn-ubereats') ? 'Uber Eats' : 'Grubhub');
+
+      trackEvent('delivery_platform_click', {
+        store_location: storeName,
+        platform_name: platformName,
+        outbound_url: platformBtn.href
+      });
+    }
+
+    // 3. Track Directions Clicks (Google Maps)
+    const directionsBtn = e.target.closest('#loc-directions');
+    if (directionsBtn) {
+      const activeStore = document.getElementById('loc-title')?.textContent.trim() || 'Store Location';
+      trackEvent('get_directions_click', {
+        store_location: activeStore,
+        maps_url: directionsBtn.href
+      });
     }
   });
 }
