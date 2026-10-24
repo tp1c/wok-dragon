@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Wok Dragon - "Asian Fresh" Design System (v2.0)
-   White & green, Gotham Rounded, Sweetgreen-inspired fast-casual look
-   (Previous dark/gold theme preserved in css/style_v1_dark.css)
+   Wok Dragon - "Green, Pink & Orange" Contemporary Asian Design System (v2.2)
+   Pantone PMS 390 (Green #b5bd00), PMS 226 (Pink #d60270), PMS 1655 (Orange #fc4c02)
+   Gotham Rounded, Fresh-casual, Vibrant Contemporary Aesthetic
    ========================================================================== */
 
 @font-face {
@@ -28,30 +28,37 @@
 :root {
   /* Surfaces */
   --bg-primary: #ffffff;
-  --bg-secondary: #f6f9ef;
-  --bg-tertiary: #eef4e0;
+  --bg-secondary: #fcfdf6;
+  --bg-tertiary: #f4f7dc;
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass: rgba(255, 255, 255, 0.94);
 
   /* Text */
-  --text-primary: #1f3010;
-  --text-secondary: #4d5f3a;
-  --text-muted: #7b8a6a;
+  --text-primary: #1c2104;
+  --text-secondary: #4a5416;
+  --text-muted: #78823b;
 
-  /* Brand */
-  --brand-green: #a0cc1e;
-  --brand-green-mid: #6f9a17;
-  --brand-green-deep: #3f6212;
-  --brand-green-ink: #1f3010;
-  --brand-pink: #e50486;
-  --brand-orange: #f15a28;
+  /* Brand Colors: Pantone PMS 390 (Green) & PMS 226 (Pink) */
+  --brand-green: #b5bd00;             /* Pantone PMS 390 C */
+  --brand-green-hover: #9fa600;       /* PMS 390 deeper shade */
+  --brand-green-mid: #727a00;         /* Accessible contrast green on light backgrounds */
+  --brand-green-deep: #2e3500;        /* Deep ink tone for readability & dark hero elements */
+  --brand-green-ink: #171b00;         /* Pure dark ink tone */
+  --brand-pink: #d60270;              /* Pantone PMS 226 C */
+  --brand-pink-hover: #b5005d;        /* PMS 226 deeper shade for active/hover */
+  --brand-pink-light: #fde8f3;        /* Soft pastel pink tint */
+  --brand-pink-glow: rgba(214, 2, 112, 0.3);
+  --brand-orange: #fc4c02;            /* Pantone PMS 1655 C */
+  --brand-orange-hover: #df3e00;      /* PMS 1655 deeper shade */
+  --brand-orange-light: #fff2ed;      /* Soft tint of PMS 1655 */
+  --brand-orange-glow: rgba(252, 76, 2, 0.28);
   --brand-gold: var(--brand-green-mid); /* legacy alias */
 
   --doordash-red: #eb1700;
   --doordash-hover: #c41300;
 
-  --border-subtle: rgba(63, 98, 18, 0.14);
-  --border-glass: rgba(63, 98, 18, 0.18);
+  --border-subtle: rgba(181, 189, 0, 0.24);
+  --border-glass: rgba(181, 189, 0, 0.35);
 
   /* Typography */
   --font-sans: 'Gotham Rounded', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -68,9 +75,9 @@
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(31, 48, 16, 0.08);
-  --shadow-md: 0 8px 24px rgba(31, 48, 16, 0.12);
-  --shadow-lg: 0 16px 40px rgba(31, 48, 16, 0.16);
+  --shadow-sm: 0 2px 8px rgba(28, 33, 4, 0.08);
+  --shadow-md: 0 8px 24px rgba(28, 33, 4, 0.12);
+  --shadow-lg: 0 16px 40px rgba(28, 33, 4, 0.16);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -106,8 +113,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding-right: 1.5rem;
 }
 
-.text-gradient { color: var(--brand-green-mid); }
-.text-flame-gradient { color: var(--brand-pink); }
+.text-gradient { color: var(--brand-pink); }
+.text-flame-gradient { color: var(--brand-orange); }
 
 /* Badges */
 .badge-tag {
@@ -122,12 +129,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 0.06em;
   background: #ffffff;
   color: var(--brand-green-deep);
-  border: 1.5px solid var(--brand-green-mid);
-  box-shadow: 0 3px 10px rgba(31, 48, 16, 0.15);
+  border: 2px solid var(--brand-green);
+  box-shadow: 0 3px 10px rgba(28, 33, 4, 0.12);
 }
-.badge-tag.spicy { color: var(--brand-orange); border-color: var(--brand-orange); }
-.badge-tag.popular { color: #ffffff; background: var(--brand-pink); border-color: var(--brand-pink); }
-.badge-tag.veggie { color: var(--brand-green-deep); background: #eaf5c8; border-color: var(--brand-green-mid); }
+.badge-tag.spicy { color: #ffffff; background: var(--brand-orange); border-color: var(--brand-orange); box-shadow: 0 4px 12px var(--brand-orange-glow); }
+.badge-tag.popular { color: #ffffff; background: var(--brand-pink); border-color: var(--brand-pink); box-shadow: 0 4px 12px var(--brand-pink-glow); }
+.badge-tag.veggie { color: var(--brand-green-deep); background: var(--bg-tertiary); border-color: var(--brand-green); }
 
 /* Buttons */
 .btn {
@@ -143,14 +150,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   white-space: nowrap;
 }
 .btn-primary {
-  background: var(--brand-green-deep);
+  background: var(--brand-pink);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(63, 98, 18, 0.28);
+  box-shadow: 0 4px 14px var(--brand-pink-glow);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: var(--brand-green-mid);
-  box-shadow: 0 8px 20px rgba(63, 98, 18, 0.35);
+  background: var(--brand-pink-hover);
+  box-shadow: 0 8px 22px rgba(214, 2, 112, 0.42);
 }
 .btn-doordash {
   background: var(--doordash-red);
@@ -211,12 +218,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-wrap: wrap;
   position: relative;
   z-index: 100;
+  border-bottom: 2.5px solid var(--brand-orange);
 }
 .announcement-bar a {
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 700;
-  color: #dff29a;
+  color: var(--brand-green);
 }
 
 /* Header */
@@ -231,14 +239,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-bottom: 1px solid var(--border-subtle);
   transition: all var(--transition-fast);
 }
-.header.scrolled { box-shadow: 0 6px 24px rgba(31, 48, 16, 0.1); }
+.header.scrolled { box-shadow: 0 6px 24px rgba(28, 33, 4, 0.1); }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 84px;
+  height: 98px;
 }
 
 .brand-logo {
@@ -248,7 +256,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
   min-width: max-content;
 }
-.brand-logo-img { height: 66px; width: auto; flex-shrink: 0; }
+.brand-logo-img { height: 84px; width: auto; flex-shrink: 0; transition: transform var(--transition-fast); }
+.brand-logo:hover .brand-logo-img { transform: scale(1.04); }
 .brand-name { display: none; }
 
 .header nav { display: flex; align-items: center; min-width: 0; }
@@ -335,6 +344,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--brand-pink);
   transform: translateX(6px);
 }
+.mobile-drawer .brand-logo-img { height: 92px; width: auto; }
 .mobile-drawer-footer { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Hero */
@@ -378,12 +388,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 0.6rem;
   padding: 0.45rem 1.1rem;
   background: #ffffff;
-  border: 1.5px solid var(--brand-green-mid);
+  border: 2px solid var(--brand-green);
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--brand-green-deep);
   margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(181, 189, 0, 0.2);
 }
 .hero-pill-badge .dot {
   width: 9px; height: 9px;
@@ -429,6 +440,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--brand-pink);
   line-height: 1;
 }
+.metric-item:nth-child(2) .metric-num { color: var(--brand-orange); }
+.metric-item:nth-child(3) .metric-num { color: var(--brand-green-mid); }
 .metric-label {
   font-size: 0.74rem;
   color: var(--text-secondary);
@@ -474,7 +487,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute;
   top: -18px; right: -12px;
   background: #ffffff;
-  border: 1.5px solid var(--brand-green-mid);
+  border: 2px solid var(--brand-green);
   padding: 0.7rem 1.1rem;
   border-radius: var(--radius-md);
   display: flex;
@@ -503,7 +516,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #dff29a;
+  color: var(--brand-green);
   font-weight: 700;
 }
 .trust-badges { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
@@ -541,7 +554,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--brand-green), var(--brand-pink));
+  background: linear-gradient(90deg, var(--brand-green), var(--brand-orange), var(--brand-pink));
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
@@ -580,13 +593,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border: 1.5px solid var(--border-glass);
   transition: all var(--transition-fast);
 }
-.filter-btn:hover { border-color: var(--brand-green-deep); }
+.filter-btn:hover { border-color: var(--brand-green); color: var(--brand-pink); }
 .filter-btn.active {
-  background: var(--brand-green-deep);
+  background: var(--brand-pink);
   color: #ffffff;
   font-weight: 700;
-  border-color: var(--brand-green-deep);
-  box-shadow: 0 4px 14px rgba(63, 98, 18, 0.28);
+  border-color: var(--brand-pink);
+  box-shadow: 0 4px 14px var(--brand-pink-glow);
 }
 
 .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
@@ -604,7 +617,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .dish-card:hover {
   transform: translateY(-6px);
   border-color: var(--brand-green);
-  box-shadow: 0 18px 36px rgba(63, 98, 18, 0.18);
+  box-shadow: 0 18px 36px rgba(181, 189, 0, 0.22);
 }
 .dish-media { position: relative; aspect-ratio: 16/11; overflow: hidden; }
 .dish-media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
@@ -736,16 +749,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
+  border: 2px solid var(--brand-green);
 }
 .review-banner-info h4 { font-size: 1.4rem; margin-bottom: 0.4rem; color: #ffffff; }
-.review-banner-info p { color: #dff29a; }
-.google-review-banner .btn-primary { background: #ffffff; color: var(--brand-green-deep); }
-.google-review-banner .btn-primary:hover { background: var(--brand-green); color: var(--brand-green-ink); }
+.review-banner-info p { color: var(--brand-green); font-weight: 500; }
+.google-review-banner .btn-primary { background: var(--brand-pink); color: #ffffff; box-shadow: 0 4px 14px var(--brand-pink-glow); }
+.google-review-banner .btn-primary:hover { background: var(--brand-pink-hover); color: #ffffff; }
 
 /* Contact Us */
 .contact-section {
   background-color: var(--bg-secondary);
-  background-image: linear-gradient(rgba(246, 249, 239, 0.93), rgba(246, 249, 239, 0.93)), url('../assets/brand/wokdragon_banner_bg.jpg');
+  background-image: linear-gradient(rgba(252, 253, 246, 0.94), rgba(252, 253, 246, 0.94)), url('../assets/brand/wokdragon_banner_bg.jpg');
   background-size: cover;
   background-position: center;
   border-top: 1px solid var(--border-subtle);
@@ -775,8 +789,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   outline: none;
-  border-color: var(--brand-green-mid);
-  box-shadow: 0 0 0 4px rgba(160, 204, 30, 0.25);
+  border-color: var(--brand-pink);
+  box-shadow: 0 0 0 4px var(--brand-pink-glow);
 }
 .form-textarea { resize: vertical; min-height: 130px; }
 .contact-success { display: none; text-align: center; padding: 2rem 0; }
@@ -791,7 +805,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.9rem;
 }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3.5rem; }
-.footer-brand .brand-logo-img { height: 90px; background: #ffffff; border-radius: var(--radius-md); padding: 4px 10px; }
+.footer-brand .brand-logo-img { height: 114px; background: #ffffff; border-radius: var(--radius-md); padding: 6px 14px; }
 .footer-brand p { margin-top: 1rem; line-height: 1.7; color: #c9d6b6; }
 .footer-col h5 { color: #ffffff; font-size: 0.95rem; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .footer-col p { color: #c9d6b6 !important; }
@@ -808,7 +822,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: #ffffff;
   transition: all var(--transition-fast);
 }
-.social-icon-link:hover { background: var(--brand-green); color: var(--brand-green-ink); transform: translateY(-2px); }
+.social-icon-link:hover { background: var(--brand-pink); color: #ffffff; transform: translateY(-2px); }
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -853,8 +867,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   body { padding-bottom: 70px; }
   .mobile-sticky-bar { display: block; }
   .header-actions .btn-doordash, .header-actions .btn-order-online { display: none; }
-  .header-inner { height: 74px; }
-  .brand-logo-img { height: 56px; }
+  .header-inner { height: 86px; }
+  .brand-logo-img { height: 74px; }
   .hero { min-height: auto; padding: 3rem 0 4rem; }
   .hero-overlay { background: rgba(255, 255, 255, 0.88); }
   .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; }
@@ -956,8 +970,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .order-modal-close:hover {
-  background: var(--brand-green);
-  color: var(--brand-green-ink);
+  background: var(--brand-pink);
+  color: #ffffff;
 }
 
 .order-modal-sub {

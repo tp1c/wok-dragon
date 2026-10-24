@@ -19,20 +19,31 @@
    - 整合 Google Analytics 4 事件追蹤（菜色點擊、外送平台點擊、分店切換等）。
    - 暫時移除 `CNAME` 檔避免未設 GoDaddy DNS 前引發 301 轉址錯誤，確保 `https://tp1c.github.io/wok-dragon/` 可正常即時預覽。
 
+5. **全系列核心招牌菜品升級為頂級商業美食攝影（45度俯視、石紋陶盤、暗色板岩背景）**：
+   - **Mango Chicken**：置換為現代霧面灰手工陶盤、全份量外推之招牌芒果雞（`mango_chicken.png`）。
+   - **Crispy Bourbon Chicken**：焦糖琥珀色、微焦酥脆波旁雞，置於現代霧面白陶盤（`bourbon_chicken.png`）。
+   - **Sweet & Sour Chicken Meal**：50/50 雙菜同盤套餐合成（上半部金黃炒飯、下半部糖醋甜酸雞），置於大型石紋白陶盤，並同步更新菜單文案為 `...with vegetable fried rice`（`sweet_sour_chicken.png`）。
+   - **Traditional Lo Mein**：油亮醬色麵體、青蔥點綴與霧面灰陶盤（`lo_mein.png`）。
+   - **Signature Fried Rice**：粒粒分明金黃長米、甜豆與胡蘿蔔丁，置於現代霧面白陶盤（`fried_rice.png`）。
+6. **品牌識別色系優化（Pantone PMS 390 / PMS 226 / PMS 1655）**：
+   - 強化亮桃紅、嫩綠與鮮橙色彩層次與微動畫對比度。
+
 ## 🚦 目前狀態
 - 前端代碼庫乾淨穩定，全站 RWD 運作順暢。
-- 雙分店外送連結已完成校對並部署上線。
+- 5 道核心料理已全數升級為高質感 45 度商業攝影風格，盤飾與背景達到一致。
+- 敏感個資檔案（`Doc/`）與龐大原始照片庫（`pics/`）已安全列入 `.gitignore`。
 
 ## ➡️ 下一步
 1. 待使用者數週後在 GoDaddy 配置好 DNS 指向（4 筆 A 紀錄與 1 筆 CNAME）後，重新加入 `CNAME` 檔啟用 `wokdragon.com` 自訂網域。
 2. 替換 [index.html](file:///c:/Data/Home/Antigravity/Wok%20Dragon/index.html) 中的 GA4 Measurement ID (`G-XXXXXXXXXX`) 為使用者實際 ID。
+3. 規劃與實作「Contact Us」區塊的雙欄版型（外燴大單分流 + 分店即時資訊）。
 
 ## ⚠️ 注意事項
-- 菜色圖片均由 `pics/generated/` 精修產出後，放入 `assets/dishes/` 並由 Git 進行版本控制。
+- 菜色圖片均由 `pics/` 來源圖進行 AI 精準外擴與盛盤置換後，放入 `assets/dishes/` 並由 Git 進行版本控制。
 - Chamblee DoorDash 正確商店路徑：`https://www.doordash.com/store/wokdragon-chamblee-31642151/48371165/`。
 
 ## 🕐 最後更新
-- 時間：2026-10-19 18:22
+- 時間：2026-10-24 11:05
 - 更新者：Antigravity
-- Git push：✅ 已推 (commit 0d6263f)
+- Git push：即將推送最新版本
 
