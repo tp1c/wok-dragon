@@ -35,27 +35,30 @@
    - **Lenox Square**：週一至週六 10:30am - 8:00pm，週日 11:30am - 7:00pm。
    - **Chamblee**：週一至週六 10:30am - 8:45pm，週日 11:30am - 7:45pm。
    - 分店切換器支援動態更新營業時間與即時營業燈號（依據美東時間與所選分店獨立計算）。
+9. **正式自訂網域（`wokdragon.com`）GoDaddy DNS 與 GitHub Pages 綁定上線**：
+   - GoDaddy DNS 配置完成：4 筆 A 記錄指向 GitHub IP（`185.199.108.153`～`111.153`），1 筆 CNAME `www` 指向 `tp1c.github.io`。
+   - 專案根目錄正式加入 `CNAME` 檔（`wokdragon.com`），正式進入全球解析與 SSL 自動簽發流程。
 
 ## 🚦 目前狀態
 - 前端代碼庫乾淨穩定，全站 RWD 運作順暢。
 - 5 道核心料理已全數升級為高質感 45 度商業攝影風格，盤飾與背景達到一致。
 - 聯絡表單已正式接通官方客服信箱（Google 官方端點，實測發信成功）。
 - 雙分店營業時間與即時狀態邏輯已更新為官方最新規格。
+- 正式網域 `wokdragon.com` 已在 GoDaddy 與 GitHub Pages 雙向綁定上線。
 - 敏感個資檔案（`Doc/`）與龐大原始照片庫（`pics/`）已安全列入 `.gitignore`。
 
 ## ➡️ 下一步
-1. 待使用者數週後在 GoDaddy 配置好 DNS 指向（4 筆 A 紀錄與 1 筆 CNAME）後，重新加入 `CNAME` 檔啟用 `wokdragon.com` 自訂網域。
-2. 替換 [index.html](file:///c:/Data/Home/Antigravity/Wok%20Dragon/index.html) 中的 GA4 Measurement ID (`G-XXXXXXXXXX`) 為使用者實際 ID。
+1. 替換 [index.html](file:///c:/Data/Home/Antigravity/Wok%20Dragon/index.html) 中的 GA4 Measurement ID (`G-XXXXXXXXXX`) 為使用者實際 ID。
+2. 待 DNS 完全傳播後，在 GitHub 倉庫設定中檢查 Enforce HTTPS 狀態。
 
 ## ⚠️ 注意事項
 - 菜色圖片均由 `pics/` 來源圖進行 AI 精準外擴與盛盤置換後，放入 `assets/dishes/` 並由 Git 進行版本控制。
 - Chamblee DoorDash 正確商店路徑：`https://www.doordash.com/store/wokdragon-chamblee-31642151/48371165/`。
 
 ## 🕐 最後更新
-- 時間：2026-10-29 17:39
+- 時間：2026-10-29 18:00
 - 更新者：Antigravity
-- Git push：✅ 已推 (commit 8055e43)
-- 更新者：Antigravity
+- Git push：即將推送最新版本
 - Git push：✅ 已推 (commit 8ed4e4b)
 - 更新者：Antigravity
 - Git push：✅ 已推 (commit e85b466)
