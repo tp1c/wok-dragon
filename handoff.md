@@ -47,7 +47,7 @@
 - Chamblee DoorDash 正確商店路徑：`https://www.doordash.com/store/wokdragon-chamblee-31642151/48371165/`。
 
 ## 🕐 最後更新
-- 時間：2026-10-24 11:05
+- 時間：2026-10-29 16:29
 - 更新者：Antigravity
-- Git push：✅ 已推 (commit 49a2af2)
+- Git push：✅ 已推 (commit e85b466)
 
