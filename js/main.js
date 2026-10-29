@@ -95,13 +95,16 @@ function initMenuFilter() {
 /* ==========================================================================
    Location Tab Switcher
    ========================================================================== */
+let currentActiveLocation = 'lenox';
+let updateLiveHoursFunction = null;
+
 const locationData = {
   lenox: {
     name: 'Lenox Square Mall (Food Court)',
     address: '3393 Peachtree Rd, Atlanta, GA 30326, USA',
     directionsUrl: 'https://www.google.com/maps/dir//3393+Peachtree+Rd+NE,+Atlanta,+GA+30326,+United+States/@33.8466952,-84.4461499,12z/',
-    hoursMonSat: '10:00 am - 08:00 pm',
-    hoursSun: '12:00 pm - 07:00 pm',
+    hoursMonSat: '10:30 am &ndash; 08:00 pm',
+    hoursSun: '11:30 am &ndash; 07:00 pm',
     features: ['Food Court Seating', 'Lenox MARTA Station Adjacent', 'Fast Pickup Available'],
     mapEmbed: 'https://maps.google.com/maps?q=3393%20Peachtree%20Rd%20NE,%20Atlanta,%20GA%2030326&t=&z=15&ie=UTF8&iwloc=&output=embed',
     platforms: [
@@ -123,8 +126,8 @@ const locationData = {
     name: 'Chamblee Location (Walmart Shopping Center)',
     address: '1891 Chamblee Tucker Rd Ste 4-2, Chamblee, GA 30341',
     directionsUrl: 'https://www.google.com/maps/place/1891+Chamblee+Tucker+Rd+Ste+4-2,+Chamblee,+GA+30341,+USA/@33.8885917,-84.3123581,17z/',
-    hoursMonSat: '10:00 am - 08:00 pm',
-    hoursSun: '12:00 pm - 07:00 pm',
+    hoursMonSat: '10:30 am &ndash; 08:45 pm',
+    hoursSun: '11:30 am &ndash; 07:45 pm',
     features: ['Free Spacious Parking', 'Walmart Shopping Center', 'Convenient Curbside & Pickup'],
     mapEmbed: 'https://maps.google.com/maps?q=1891%20Chamblee%20Tucker%20Rd%20Ste%204-2,%20Chamblee,%20GA%2030341&t=&z=15&ie=UTF8&iwloc=&output=embed',
     platforms: [
@@ -156,6 +159,8 @@ function initLocationSwitcher() {
   const locAddress = document.getElementById('loc-address');
   const locDirections = document.getElementById('loc-directions');
   const locFeatures = document.getElementById('loc-features');
+  const locHoursMonSat = document.getElementById('loc-hours-monsat');
+  const locHoursSun = document.getElementById('loc-hours-sun');
   const mapFrame = document.getElementById('loc-map-frame');
   const locDeliveryBtns = document.getElementById('loc-delivery-buttons');
 
@@ -182,10 +187,13 @@ function initLocationSwitcher() {
 
       if (!data) return;
 
+      currentActiveLocation = locKey;
       if (locTitle) locTitle.textContent = data.name;
       if (locAddress) locAddress.textContent = data.address;
       if (locDirections) locDirections.href = data.directionsUrl;
       if (mapFrame) mapFrame.src = data.mapEmbed;
+      if (locHoursMonSat) locHoursMonSat.innerHTML = `Mon - Sat: ${data.hoursMonSat}`;
+      if (locHoursSun) locHoursSun.innerHTML = `Sunday: ${data.hoursSun}`;
 
       if (locFeatures) {
         locFeatures.innerHTML = data.features.map(f => `
@@ -197,6 +205,9 @@ function initLocationSwitcher() {
       }
 
       renderDeliveryButtons(data.platforms);
+      if (typeof updateLiveHoursFunction === 'function') {
+        updateLiveHoursFunction();
+      }
       trackEvent('location_tab_switch', {
         store_selected: data.name
       });
@@ -222,23 +233,32 @@ function initLiveHours() {
       const min = atlantaDate.getMinutes();
       const currentMinutes = hour * 60 + min;
 
+      const isChamblee = currentActiveLocation === 'chamblee';
       let isOpen = false;
       let closingTimeStr = '';
       let openTimeStr = '';
 
-      if (day === 0) { // Sunday: 12:00 PM (720 min) - 7:00 PM (1140 min)
-        if (currentMinutes >= 720 && currentMinutes < 1140) {
+      if (day === 0) { // Sunday
+        const openMin = 690; // 11:30 AM
+        const closeMin = isChamblee ? 1185 : 1140; // Chamblee 7:45 PM (1185m), Lenox 7:00 PM (1140m)
+        closingTimeStr = isChamblee ? '7:45 PM' : '7:00 PM';
+
+        if (currentMinutes >= openMin && currentMinutes < closeMin) {
           isOpen = true;
-          closingTimeStr = '7:00 PM';
         } else {
-          openTimeStr = currentMinutes < 720 ? '12:00 PM today' : '10:00 AM Mon';
+          openTimeStr = currentMinutes < openMin ? '11:30 AM today' : '10:30 AM Mon';
         }
-      } else { // Monday - Saturday: 10:00 AM (600 min) - 8:00 PM (1200 min)
-        if (currentMinutes >= 600 && currentMinutes < 1200) {
+      } else { // Monday - Saturday
+        const openMin = 630; // 10:30 AM
+        const closeMin = isChamblee ? 1245 : 1200; // Chamblee 8:45 PM (1245m), Lenox 8:00 PM (1200m)
+        closingTimeStr = isChamblee ? '8:45 PM' : '8:00 PM';
+
+        if (currentMinutes >= openMin && currentMinutes < closeMin) {
           isOpen = true;
-          closingTimeStr = '8:00 PM';
         } else {
-          openTimeStr = currentMinutes < 600 ? '10:00 AM today' : (day === 6 ? '12:00 PM Sun' : '10:00 AM tomorrow');
+          openTimeStr = currentMinutes < openMin 
+            ? '10:30 AM today' 
+            : (day === 6 ? '11:30 AM Sun' : '10:30 AM tomorrow');
         }
       }
 
@@ -254,6 +274,7 @@ function initLiveHours() {
     }
   }
 
+  updateLiveHoursFunction = updateStatus;
   updateStatus();
   setInterval(updateStatus, 60000); // Check every minute
 }

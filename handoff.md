@@ -31,11 +31,16 @@
    - 採用 Google 原生 Apps Script Web App 端點（`https://script.google.com/macros/s/AKfycbzySdDA4vNmMXiZ1NTTR_fdB2kb96B8rx2bjh9d2HYbiY2JE-2SJdrZpashsdKuO6qN/exec`）。
    - 100% 依託 Google 雲端架構，徹底杜絕第三方平台（FormSubmit 521 / Web3Forms）當機與漏信問題。
    - 前端採用無刷新流暢送出體驗，自動將顧客訊息發送至 `wokdragonsupport@gmail.com`。
+8. **雙分店營業時間正式更新與即時狀態（Live Hours Status）連動**：
+   - **Lenox Square**：週一至週六 10:30am - 8:00pm，週日 11:30am - 7:00pm。
+   - **Chamblee**：週一至週六 10:30am - 8:45pm，週日 11:30am - 7:45pm。
+   - 分店切換器支援動態更新營業時間與即時營業燈號（依據美東時間與所選分店獨立計算）。
 
 ## 🚦 目前狀態
 - 前端代碼庫乾淨穩定，全站 RWD 運作順暢。
 - 5 道核心料理已全數升級為高質感 45 度商業攝影風格，盤飾與背景達到一致。
 - 聯絡表單已正式接通官方客服信箱（Google 官方端點，實測發信成功）。
+- 雙分店營業時間與即時狀態邏輯已更新為官方最新規格。
 - 敏感個資檔案（`Doc/`）與龐大原始照片庫（`pics/`）已安全列入 `.gitignore`。
 
 ## ➡️ 下一步
@@ -47,7 +52,9 @@
 - Chamblee DoorDash 正確商店路徑：`https://www.doordash.com/store/wokdragon-chamblee-31642151/48371165/`。
 
 ## 🕐 最後更新
-- 時間：2026-10-29 17:12
+- 時間：2026-10-29 17:39
+- 更新者：Antigravity
+- Git push：即將推送最新版本
 - 更新者：Antigravity
 - Git push：✅ 已推 (commit 8ed4e4b)
 - 更新者：Antigravity
