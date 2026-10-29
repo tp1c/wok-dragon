@@ -266,19 +266,57 @@ function initContactForm() {
   const successNotice = document.getElementById('contact-success');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    const action = form.getAttribute('action');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
     trackEvent('contact_form_submit', { form_id: 'contact-form' });
-    // Until a real email endpoint is configured (action="#"), show the success state locally.
-    if (!action || action === '#') {
-      e.preventDefault();
-      form.style.display = 'none';
-      if (successNotice) successNotice.style.display = 'block';
-      setTimeout(() => {
-        form.reset();
-        form.style.display = 'block';
-        if (successNotice) successNotice.style.display = 'none';
-      }, 5000);
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending Message...';
+    }
+
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => { formObject[key] = value; });
+
+    // Format customized subject line
+    const subjectSelect = form.querySelector('#contact-subject');
+    const subjectText = subjectSelect ? subjectSelect.options[subjectSelect.selectedIndex].text : 'General Question';
+    formObject._subject = `[Wokdragon Web] ${subjectText} from ${formObject.name || 'Customer'}`;
+    formObject._template = 'table';
+    formObject._captcha = 'false';
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/wokdragonsupport@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formObject)
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        if (successNotice) successNotice.style.display = 'block';
+        setTimeout(() => {
+          form.reset();
+          form.style.display = 'block';
+          if (successNotice) successNotice.style.display = 'none';
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+        }, 6000);
+      } else {
+        // Fallback to standard form submission if AJAX needs activation page
+        form.submit();
+      }
+    } catch (err) {
+      // Fallback on network or CORS errors
+      form.submit();
     }
   });
 }

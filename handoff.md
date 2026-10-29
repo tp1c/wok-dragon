@@ -27,16 +27,20 @@
    - **Signature Fried Rice**：粒粒分明金黃長米、甜豆與胡蘿蔔丁，置於現代霧面白陶盤（`fried_rice.png`）。
 6. **品牌識別色系優化（Pantone PMS 390 / PMS 226 / PMS 1655）**：
    - 強化亮桃紅、嫩綠與鮮橙色彩層次與微動畫對比度。
+7. **Contact Us 聯絡表單正式串接官方客服信箱（`wokdragonsupport@gmail.com`）**：
+   - 整合 FormSubmit AJAX 背景發送技術，顧客送出表單後不需跳轉，即時顯示發送中與成功卡片。
+   - 自動將顧客諮詢依主旨分類以清晰表格格式即時送達 `wokdragonsupport@gmail.com`。
 
 ## 🚦 目前狀態
 - 前端代碼庫乾淨穩定，全站 RWD 運作順暢。
 - 5 道核心料理已全數升級為高質感 45 度商業攝影風格，盤飾與背景達到一致。
+- 聯絡表單已正式接通官方客服信箱。
 - 敏感個資檔案（`Doc/`）與龐大原始照片庫（`pics/`）已安全列入 `.gitignore`。
 
 ## ➡️ 下一步
 1. 待使用者數週後在 GoDaddy 配置好 DNS 指向（4 筆 A 紀錄與 1 筆 CNAME）後，重新加入 `CNAME` 檔啟用 `wokdragon.com` 自訂網域。
 2. 替換 [index.html](file:///c:/Data/Home/Antigravity/Wok%20Dragon/index.html) 中的 GA4 Measurement ID (`G-XXXXXXXXXX`) 為使用者實際 ID。
-3. 規劃與實作「Contact Us」區塊的雙欄版型（外燴大單分流 + 分店即時資訊）。
+3. 進行第一次表單啟用點擊（至 `wokdragonsupport@gmail.com` 點擊 FormSubmit 啟用確認信）。
 
 ## ⚠️ 注意事項
 - 菜色圖片均由 `pics/` 來源圖進行 AI 精準外擴與盛盤置換後，放入 `assets/dishes/` 並由 Git 進行版本控制。
