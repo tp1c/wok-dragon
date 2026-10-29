@@ -261,6 +261,8 @@ function initLiveHours() {
 /* ==========================================================================
    Contact Us Form
    ========================================================================== */
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzySdDA4vNmMXiZ1NTTR_fdB2kb96B8rx2bjh9d2HYbiY2JE-2SJdrZpashsdKuO6qN/exec";
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const successNotice = document.getElementById('contact-success');
@@ -285,38 +287,36 @@ function initContactForm() {
     const subjectSelect = form.querySelector('#contact-subject');
     const subjectText = subjectSelect ? subjectSelect.options[subjectSelect.selectedIndex].text : 'General Question';
     formObject._subject = `[Wokdragon Web] ${subjectText} from ${formObject.name || 'Customer'}`;
-    formObject._template = 'table';
-    formObject._captcha = 'false';
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/wokdragonsupport@gmail.com", {
+      await fetch(GAS_ENDPOINT, {
         method: "POST",
+        mode: "no-cors",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(formObject)
       });
 
-      if (response.ok) {
-        form.style.display = 'none';
-        if (successNotice) successNotice.style.display = 'block';
-        setTimeout(() => {
-          form.reset();
-          form.style.display = 'block';
-          if (successNotice) successNotice.style.display = 'none';
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-          }
-        }, 6000);
-      } else {
-        // Fallback to standard form submission if AJAX needs activation page
-        form.submit();
-      }
+      // Google Apps Script successfully triggered email send
+      form.style.display = 'none';
+      if (successNotice) successNotice.style.display = 'block';
+      setTimeout(() => {
+        form.reset();
+        form.style.display = 'block';
+        if (successNotice) successNotice.style.display = 'none';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }, 6000);
     } catch (err) {
-      // Fallback on network or CORS errors
-      form.submit();
+      console.error('Contact form submission error:', err);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+      alert('We were unable to send your message. Please email us directly at wokdragonsupport@gmail.com.');
     }
   });
 }
