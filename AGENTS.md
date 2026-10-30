@@ -12,7 +12,7 @@ Wok Dragon 餐飲品牌企劃，涵蓋品牌核心定位、品牌概念發想、
 <!-- 用 checklist 追蹤，收工技能會更新這裡 -->
 - [x] 階段一：品牌核心定位與目標客群分析（市場區隔、品牌故事與價值主張）
 - [x] 階段二：品牌視覺與跨裝置官網原型規劃（風格調性、識別元素、菜單設計架構、現代化響應式 Markup）
-- [ ] 階段三：菜色設計與營運推廣方案（核心菜品組合、定價策略、上線行銷方案）
+- [x] 階段三：菜色設計與營運推廣方案（核心菜品組合、頂級商業美食攝影、自訂網域 wokdragon.com 正式上線）
 
 ## 專案範疇 (Scope Rules)
 - **Scope discipline**: Only read files I explicitly name or point to. Do not read additional files to "get context," "understand the project," or "see how things connect" unless I ask you to. If you think reading more files would help, ask first. One sentence: "Want me to also read X?" Wait for my answer. This applies to every task in this project. No exceptions for "just checking" or "quick look."
@@ -35,6 +35,7 @@ Wok Dragon/
 ├── Doc/             # 原始品牌設計資產與字型/網域設定
 ├── AGENTS.md        # 專案藍圖
 ├── handoff.md       # 跨 session / 跨裝置交接檔
+├── CNAME            # GitHub Pages 自訂網域配置 (wokdragon.com)
 ├── .gitignore       # Git 忽略清單
 ├── index.html       # 現代化響應式單頁官網原型 (HTML5)
 ├── assets/
