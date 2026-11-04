@@ -25,7 +25,7 @@
    - 實測 `https://wokdragon.com` 回應 HTTP 200 OK，`https://www.wokdragon.com` 正確 301 轉址。
 
 6. **正式啟用 Google Analytics 4 (GA4) 網站數據追蹤**：
-   - 填入官方正式 Measurement ID：`G-MXKMFQT9F`。
+   - 填入官方正式 Measurement ID：`G-MXKMFQFT9F`。
    - 正式啟用全站訪客行為追蹤（外送平台點擊、電話撥打、菜單分類切換與聯絡表單送達）。
 
 ## 🚦 目前狀態
@@ -34,11 +34,11 @@
 - 5 道核心料理已全數升級為高質感 45 度商業攝影風格，盤飾與背景達到一致。
 - 聯絡表單已正式接通官方客服信箱（Google 官方端點，實測發信成功）。
 - 雙分店最新營業時間與即時狀態邏輯已更新。
-- **GA4 正式上線運作**：已配置正式 Measurement ID `G-MXKMFQT9F`，開始收集訪客流量與轉換數據。
+- **GA4 正式上線運作**：已配置正式 Measurement ID `G-MXKMFQFT9F`，開始收集訪客流量與轉換數據。
 - 敏感個資檔案（`Doc/`）與龐大原始照片庫（`pics/`）已安全列入 `.gitignore`。
 
 ## ➡️ 下一步
-1. 在 Google Analytics 後台點擊「Test installation」或於 24~48 小時內觀察即時（Realtime）報表驗證資料收集。
+1. 在 Google Analytics 後台觀察即時（Realtime）報表驗證資料收集與事件追蹤。
 2. 評估是否需要新增節慶促銷 Banner 或線上訂餐折扣活動模組。
 
 ## ⚠️ 注意事項
@@ -47,6 +47,6 @@
 - GoDaddy DNS 中的 Google Workspace MX 與 TXT（SPF / DMARC）記錄為官方信箱必要設定，請勿更動或刪除。
 
 ## 🕐 最後更新
-- 時間：2026-10-31 16:55
+- 時間：2026-11-03 23:15
 - 更新者：Antigravity @ DESKTOP-V8U57EU
 - Git push：✅ 已推
