@@ -289,9 +289,11 @@ function initContactForm() {
   const successNotice = document.getElementById('contact-success');
   if (!form) return;
 
+  // Anti-bot: Record timestamp when contact form is initialized
+  const formInitTime = Date.now();
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    trackEvent('contact_form_submit', { form_id: 'contact-form' });
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message';
@@ -303,6 +305,35 @@ function initContactForm() {
     const formData = new FormData(form);
     const formObject = {};
     formData.forEach((value, key) => { formObject[key] = value; });
+
+    // Anti-bot check: Honeypot field and Time Gate
+    const honeypotVal = (formObject.website || '').trim();
+    const elapsedSeconds = (Date.now() - formInitTime) / 1000;
+    const isBot = honeypotVal !== '' || elapsedSeconds < 2.5;
+
+    // Clean up honeypot field from payload
+    delete formObject.website;
+
+    if (isBot) {
+      console.warn('Bot detected and silently dropped.');
+      // Simulate realistic network delay for stealth
+      await new Promise(resolve => setTimeout(resolve, 800));
+      form.style.display = 'none';
+      if (successNotice) successNotice.style.display = 'block';
+      setTimeout(() => {
+        form.reset();
+        form.style.display = 'block';
+        if (successNotice) successNotice.style.display = 'none';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }, 6000);
+      return;
+    }
+
+    // Only genuine user submissions trigger conversion tracking
+    trackEvent('contact_form_submit', { form_id: 'contact-form' });
 
     // Format customized subject line
     const subjectSelect = form.querySelector('#contact-subject');
