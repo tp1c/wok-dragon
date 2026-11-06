@@ -33,7 +33,8 @@
 8. **官方社群新門面正式串接官網**：
    - Instagram 更新為官方帳號：`https://www.instagram.com/wokdragon.official`。
    - Facebook 更新為官方新專頁：`https://www.facebook.com/profile.php?id=61595993053462`。
-   - 頁尾社群連結優化：移除閒置之 LinkedIn 連結。
+   - TikTok 更新為官方新帳號：`https://www.tiktok.com/@wokdragon.official`。
+   - 頁尾社群連結優化：移除閒置之 LinkedIn 連結，完成 IG / FB / TikTok 三大官方旗艦矩陣佈局。
 
 ## 🚦 目前狀態
 - **正式官網 100% 正式上線運作**：`https://wokdragon.com` 與 `https://www.wokdragon.com` 皆安全可達。
@@ -54,6 +55,6 @@
 - GoDaddy DNS 中的 Google Workspace MX 與 TXT（SPF / DMARC）記錄為官方信箱必要設定，請勿更動或刪除。
 
 ## 🕐 最後更新
-- 時間：2026-11-06 08:44
+- 時間：2026-11-06 09:42
 - 更新者：Antigravity @ DESKTOP-V8U57EU
 - Git push：✅ 已推
