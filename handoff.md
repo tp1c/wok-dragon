@@ -31,7 +31,7 @@
    - 前端加入無障礙隱藏欄位 `website` 與 2.5 秒填表時間限制。
    - 偵測到機器人時採擬真延遲與靜默丟棄（不觸發 Apps Script 後端發信、不污染 GA4 轉換事件）。
 8. **官方社群新門面正式串接官網**：
-   - Instagram 更新為官方帳號：`https://www.instagram.com/wokdragon.offocial`。
+   - Instagram 更新為官方帳號：`https://www.instagram.com/wokdragon.official`。
    - Facebook 更新為官方新專頁：`https://www.facebook.com/profile.php?id=61595993053462`。
 
 ## 🚦 目前狀態
