@@ -55,6 +55,6 @@
 - GoDaddy DNS 中的 Google Workspace MX 與 TXT（SPF / DMARC）記錄為官方信箱必要設定，請勿更動或刪除。
 
 ## 🕐 最後更新
-- 時間：2026-11-08 15:07
+- 時間：2026-11-08 22:35
 - 更新者：Antigravity @ DESKTOP-V8U57EU
 - Git push：✅ 已推
