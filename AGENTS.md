@@ -40,6 +40,7 @@ Wok Dragon/
 ├── index.html       # 現代化響應式單頁官網原型 (HTML5)
 ├── assets/
 │   └── dishes/      # 官方料理與節慶活動相片牆本地圖資
+├── generated/       # AI 生成之數位菜單面板與實景修圖資產
 ├── css/
 │   └── style.css    # 現代白綠 Sweetgreen 設計系統、微動畫與跨裝置 RWD 樣式
 ├── js/
